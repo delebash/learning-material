@@ -1,0 +1,67 @@
+body {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+button {
+    margin: 0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    padding: 12px 24px;
+    letter-spacing: 1px;
+    background: #4A89DC;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 darken(#434A54, 10%);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+.box {
+    margin-top: 24px;
+    max-width: 350px;
+    line-height: 24px;
+    padding: 12px 24px;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+.box, button {
+    font-size: 13px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+[data-ripple] {
+    overflow: hidden;
+    position: relative;
+}
+
+.ripple__effect {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    background-color: rgba(0,0,0,.1)
+}
+
+.ripple__effect.animate {
+    -webkit-animation: rip .65s linear;
+    animation: rip .65s linear;
+}
+
+@-webkit-keyframes rip {
+    50% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+}
+
+@keyframes rip {
+    50% {
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+}

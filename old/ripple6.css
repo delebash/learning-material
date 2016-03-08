@@ -1,0 +1,51 @@
+html, body {
+    background-color: #EEE;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.box {
+    background-color: #2CC36B;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px 0px #777;
+    height: 200px;
+    left: 50%;
+    margin: -100px auto auto -100px;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    width: 200px;
+}
+
+.ripple {
+    background-color: rgba(255,255,255, 0.5);
+    border-radius: 100%;
+    height: 100px;
+    position: absolute;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    width: 100px;
+}
+
+.animate {
+    -webkit-animation: ripple 1s linear;
+    animation: ripple 1s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        -webkit-transform: scale(5);
+        transform: scale(5);
+        background-color: transparent;
+    }
+}
+
+@keyframes ripple {
+    100% {
+        -webkit-transform: scale(5);
+        transform: scale(5);
+        background-color: transparent;
+    }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="ripple5.css">
+</head>
+<body>
+<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+    <svg>
+        <symbol id="ripple" viewBox="0 0 2 2">
+            <circle cx="1" cy="1" r="1" />
+        </symbol>
+    </svg>
+</div>
+
+<button id="button" class="=button">
+    Click for Ripple
+    <svg class="ripple">
+        <use xlink:href="#ripple" width="20" height="20"></use>
+    </svg>
+</button>
+<button id="butto1n" class="button">
+    Click for Ripple
+    <svg class="ripple">
+        <use xlink:href="#ripple" width="20" height="20"></use>
+    </svg>
+</button>
+<script src="ripple5.js"></script>
+</body>
+</html>
