@@ -4,7 +4,7 @@ document.addEventListener('click', function (event) {
 
     if (event.target.classList.contains('ripple-effect')) {
         console.log('ripple class found')
-        var clickedEl = event.target;
+        clickedEl = event.target;
     } else {
         console.log('check parent for .ripple effect')
         var clickedEl = event.target.closest('.ripple-effect');

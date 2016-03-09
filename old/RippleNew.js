@@ -28,8 +28,13 @@ document.addEventListener('click', function (event) {
 
     if(rip.style.width === ""){
         diameter = Math.max(clickedEl.clientWidth, clickedEl.clientHeight);
+
         rip.style.width = diameter + 'px';
         rip.style.height = diameter + 'px';
+    console.log(rip.style.width)
+        console.log(rip.style.height)
+        console.log(clickedEl.clientWidth)
+        console.log(diameter)
     } else {
         diameter = rip.clientWidth;
     }
@@ -39,7 +44,7 @@ document.addEventListener('click', function (event) {
     rip.style.left = (event.offsetX - diameter / 2) + 'px';
 
     rip.classList.remove('animate');
-    rip.width = rip.clientWidth + 'px';
+    //rip.width = rip.clientWidth + 'px';
     rip.classList.add('animate');
 });
 
