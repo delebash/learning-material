@@ -4,18 +4,18 @@ document.addEventListener('click', function (event) {
 
     if (event.target.classList.contains('ripple-effect')) {
         console.log('ripple class found')
-        RipTarget = event.target;
+        var clickedEl = event.target;
     } else {
         console.log('check parent for .ripple effect')
-        var RipTarget = event.target.closest('.ripple-effect');
-        if (!RipTarget) {
+        var clickedEl = event.target.closest('.ripple-effect');
+        if (!clickedEl) {
             console.log('no ripple-effect in parent')
             return;
         }
     }
 
 
-    var rect = RipTarget.getBoundingClientRect();
+    var rect = clickedEl.getBoundingClientRect();
     var x = event.clientX - rect.left;
     var y = event.clientY - rect.top;
     var circle = document.createElement("div");
@@ -23,10 +23,10 @@ document.addEventListener('click', function (event) {
     circle.style.top = y + "px";
     circle.style.left = x + "px";
     circle.className = "ripple animate";
-    RipTarget.appendChild(circle);
+    clickedEl.appendChild(circle);
     ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
         circle.addEventListener(eventName, function () {
-            RipTarget.removeChild(circle);
+            clickedEl.removeChild(circle);
         });
     });
 });
