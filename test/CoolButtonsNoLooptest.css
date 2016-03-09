@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+
+.button {
+    margin: 0 0.54em;
+    border: none;
+    outline: none;
+    padding: 0.78em 1.17em;
+    font-size: 0.8rem;
+    background-color: lightgray;
+    color: gray;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-transition: box-shadow 450ms ease;
+    transition: box-shadow 450ms ease;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.38);
+}
+
+.button.cancel {
+    background-color: tomato;
+    color: #fff;
+}
+
+.button.ok {
+    background-color: #36CC36;
+    color: #fff;
+}
+
+.ripple-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.ripple.animate {
+    -webkit-animation: ripple 2s;
+    animation: ripple 2s;
+}
+
+@-webkit-keyframes ripple {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        -webkit-transform: scale(50);
+        transform: scale(50);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    from {
+        opacity: 0.25;
+    }
+    to {
+        -webkit-transform: scale(50);
+        transform: scale(50);
+        opacity: 0;
+    }
+}
