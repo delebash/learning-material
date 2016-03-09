@@ -26,7 +26,7 @@ document.addEventListener('click', function (event) {
         });
     }
 
-    if(rip.style.width === ""){
+    if (rip.style.width === "") {
         diameter = Math.max(clickedEl.clientWidth, clickedEl.clientHeight);
         rip.style.width = diameter + 'px';
         rip.style.height = diameter + 'px';
