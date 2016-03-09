@@ -21,12 +21,12 @@ document.addEventListener('click', function (event) {
         // when the animation ends remove el (bind for all vendor prefixes)
         ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
             rip.addEventListener(eventName, function () {
-                rip.classList.remove('animate')
+                //rip.classList.remove('animate')
             });
         });
     }
 
-    if (rip.style.width === "") {
+    if(rip.style.width === ""){
         diameter = Math.max(clickedEl.clientWidth, clickedEl.clientHeight);
         rip.style.width = diameter + 'px';
         rip.style.height = diameter + 'px';

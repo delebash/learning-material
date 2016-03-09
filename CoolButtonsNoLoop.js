@@ -26,7 +26,7 @@ document.addEventListener('click', function (event) {
     clickedEl.appendChild(circle);
     ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
         circle.addEventListener(eventName, function () {
-            clickedEl.removeChild(circle);
+    //        clickedEl.removeChild(circle);
         });
     });
 });
