@@ -46,25 +46,13 @@
     border-radius: 5px;
     background-color: #fff;
     opacity: 0;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
 }
 
 .ripple.animate {
-    -webkit-animation: ripple 2s;
-    animation: ripple 2s;
+     animation: ripple 2s;
 }
 
-@-webkit-keyframes ripple {
-    from {
-        opacity: 0.25;
-    }
-    to {
-        -webkit-transform: scale(50);
-        transform: scale(50);
-        opacity: 0;
-    }
-}
 
 @keyframes ripple {
     from {
