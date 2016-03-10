@@ -22,11 +22,11 @@ document.addEventListener('click', function (event) {
 
     circle.style.top = y + "px";
     circle.style.left = x + "px";
-    circle.className = "ripple animate";
+    circle.classList.add("ripple","animate");
     clickedEl.appendChild(circle);
     ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
         circle.addEventListener(eventName, function () {
-            clickedEl.removeChild(circle);
+       //     clickedEl.removeChild(circle);
         });
     });
 });
