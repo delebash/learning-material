@@ -1,51 +1,35 @@
+
+//WORKING CLEANER WAY
 document.addEventListener('click', function (event) {
-    if (!event.target.classList.contains('ripple')) {
+
+    if (event.target.classList.contains('ripple')) {
+        console.log('ripple class found')
+        clickedEl = event.target;
+    } else {
+        console.log('check parent for .ripple ')
         var clickedEl = event.target.closest('.ripple');
         if (!clickedEl) {
+            console.log('no ripple-effect in parent')
             return;
         }
     }
 
-    if (!clickedEl) {
-        clickedEl = event.target;
-    }
-
-    var rip, diameter;
-    rip = clickedEl.querySelector('.ripple__effect');
-
-    if (!rip) {
-        // first time clicked => create a new ink element
-        rip = document.createElement('div');
-        rip.classList.add('ripple__effect');
-        clickedEl.appendChild(rip);
-        // when the animation ends remove el (bind for all vendor prefixes)
-        ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
-            rip.addEventListener(eventName, function () {
-                //rip.classList.remove('animate')
-            });
-        });
-    }
-    
-    if(rip.style.width === ""){
-        // diameter = Math.max(clickedEl.clientWidth, clickedEl.clientHeight);
-        // rip.style.width = diameter + 'px';
-        // rip.style.height = diameter + 'px';
-    } else {
-        //diameter = rip.clientWidth;
-    }
-
-    // calculate the click center
-    // rip.style.top = (event.offsetY - diameter / 2) + 'px';
-    // rip.style.left = (event.offsetX - diameter / 2) + 'px';
 
     var rect = clickedEl.getBoundingClientRect();
-    rip.style.top = event.clientX - rect.left;
-    rip.style.left = event.clientY - rect.top;
+    var x = event.clientX - rect.left;
+    var y = event.clientY - rect.top;
+    var circle = document.createElement("div");
 
-
-    rip.classList.remove('animate');
-    rip.width = rip.clientWidth + 'px';
-    rip.classList.add('animate');
-
+    circle.style.top = y + "px";
+    circle.style.left = x + "px";
+    circle.classList.add("ripple","animate");
+    clickedEl.appendChild(circle);
+    ['animationend', 'webkitAnimationEnd', 'oAnimationEnd', 'MSAnimationEnd'].forEach(function (eventName) {
+        circle.addEventListener(eventName, function () {
+            //     clickedEl.removeChild(circle);
+        });
+    });
 });
+
+
 
